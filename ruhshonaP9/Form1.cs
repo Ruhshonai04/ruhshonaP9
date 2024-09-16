@@ -26,5 +26,22 @@ namespace ruhshonaP9
         {
 
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtCustomerName.Clear();
+            txtFoodPrice.Clear();
+            lstOut.Items.Clear();
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lstOut_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

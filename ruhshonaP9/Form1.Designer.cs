@@ -32,8 +32,8 @@
             label2 = new Label();
             txtCustomerName = new TextBox();
             label3 = new Label();
-            textBox1 = new TextBox();
-            IstOut = new ListBox();
+            txtFoodPrice = new TextBox();
+            lstOut = new ListBox();
             btn = new Button();
             btnClear = new Button();
             btnQuit = new Button();
@@ -46,19 +46,21 @@
             label1.ForeColor = Color.Blue;
             label1.Location = new Point(322, 36);
             label1.Name = "label1";
-            label1.Size = new Size(70, 28);
+            label1.Size = new Size(167, 28);
             label1.TabIndex = 0;
-            label1.Text = "label1";
+            label1.Text = "Food Restaurant";
             label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.ControlText;
             label2.Location = new Point(60, 119);
             label2.Name = "label2";
-            label2.Size = new Size(90, 15);
+            label2.Size = new Size(95, 15);
             label2.TabIndex = 1;
-            label2.Text = "costomer name";
+            label2.Text = "Costumer name";
             // 
             // txtCustomerName
             // 
@@ -70,27 +72,29 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label3.Location = new Point(70, 167);
             label3.Name = "label3";
-            label3.Size = new Size(67, 15);
+            label3.Size = new Size(65, 15);
             label3.TabIndex = 3;
-            label3.Text = "Ticket Price";
+            label3.Text = "Food Price";
             // 
-            // textBox1
+            // txtFoodPrice
             // 
-            textBox1.Location = new Point(233, 159);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(159, 23);
-            textBox1.TabIndex = 4;
+            txtFoodPrice.Location = new Point(233, 159);
+            txtFoodPrice.Name = "txtFoodPrice";
+            txtFoodPrice.Size = new Size(159, 23);
+            txtFoodPrice.TabIndex = 4;
             // 
-            // IstOut
+            // lstOut
             // 
-            IstOut.FormattingEnabled = true;
-            IstOut.ItemHeight = 15;
-            IstOut.Location = new Point(44, 244);
-            IstOut.Name = "IstOut";
-            IstOut.Size = new Size(687, 154);
-            IstOut.TabIndex = 6;
+            lstOut.FormattingEnabled = true;
+            lstOut.ItemHeight = 15;
+            lstOut.Location = new Point(44, 244);
+            lstOut.Name = "lstOut";
+            lstOut.Size = new Size(687, 154);
+            lstOut.TabIndex = 6;
+            lstOut.SelectedIndexChanged += lstOut_SelectedIndexChanged;
             // 
             // btn
             // 
@@ -110,6 +114,7 @@
             btnClear.TabIndex = 8;
             btnClear.Text = "&Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnQuit
             // 
@@ -119,6 +124,7 @@
             btnQuit.TabIndex = 9;
             btnQuit.Text = "&Quit";
             btnQuit.UseVisualStyleBackColor = true;
+            btnQuit.Click += btnQuit_Click;
             // 
             // Form1
             // 
@@ -128,8 +134,8 @@
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
             Controls.Add(btn);
-            Controls.Add(IstOut);
-            Controls.Add(textBox1);
+            Controls.Add(lstOut);
+            Controls.Add(txtFoodPrice);
             Controls.Add(label3);
             Controls.Add(txtCustomerName);
             Controls.Add(label2);
@@ -147,9 +153,9 @@
         private Label label2;
         private TextBox txtCustomerName;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtFoodPrice;
         private MaskedTextBox maskedTextBox1;
-        private ListBox IstOut;
+        private ListBox lstOut;
         private Button btn;
         private Button btnClear;
         private Button btnQuit;
