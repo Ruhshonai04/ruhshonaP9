@@ -22,16 +22,13 @@ namespace ruhshonaP9
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtCustomerName.Clear();
             txtFoodPrice.Clear();
             lstOut.Items.Clear();
+            txtCustomerName.Focus();
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
@@ -42,6 +39,41 @@ namespace ruhshonaP9
         private void lstOut_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCustomerName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCalculateTotal_Click(object sender, EventArgs e)
+        {
+            // input
+
+
+            //processing    
+
+
+            //output
+
+            // This chnages the focus to the clear button
+            btnClear.Focus();
+
+        }
+
+        private void txtCustomerName_Enter(object sender, EventArgs e)
+        {
+            txtCustomerName.BackColor = Color.Bisque;
+        }
+
+        private void txtCustomerName_Leave(object sender, EventArgs e)
+        {
+            txtCustomerName.BackColor = SystemColors.Window;
         }
     }
 }

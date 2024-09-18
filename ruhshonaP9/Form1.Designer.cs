@@ -34,7 +34,7 @@
             label3 = new Label();
             txtFoodPrice = new TextBox();
             lstOut = new ListBox();
-            btn = new Button();
+            btnCalculateTotal = new Button();
             btnClear = new Button();
             btnQuit = new Button();
             SuspendLayout();
@@ -42,40 +42,45 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label1.ForeColor = Color.Blue;
-            label1.Location = new Point(322, 36);
+            label1.Font = new Font("Cooper Black", 18F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Crimson;
+            label1.Location = new Point(283, 46);
             label1.Name = "label1";
-            label1.Size = new Size(167, 28);
+            label1.Size = new Size(216, 27);
             label1.TabIndex = 0;
             label1.Text = "Food Restaurant";
             label1.Click += label1_Click;
             // 
             // label2
             // 
+            label2.AllowDrop = true;
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlText;
             label2.Location = new Point(60, 119);
             label2.Name = "label2";
-            label2.Size = new Size(95, 15);
+            label2.Size = new Size(107, 17);
             label2.TabIndex = 1;
-            label2.Text = "Costumer name";
+            label2.Text = "Costumer Name";
             // 
             // txtCustomerName
             // 
+            txtCustomerName.BackColor = SystemColors.Window;
+            txtCustomerName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtCustomerName.Location = new Point(233, 119);
             txtCustomerName.Name = "txtCustomerName";
             txtCustomerName.Size = new Size(201, 23);
             txtCustomerName.TabIndex = 2;
+            txtCustomerName.Enter += txtCustomerName_Enter;
+            txtCustomerName.Leave += txtCustomerName_Leave;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(70, 167);
             label3.Name = "label3";
-            label3.Size = new Size(65, 15);
+            label3.Size = new Size(73, 17);
             label3.TabIndex = 3;
             label3.Text = "Food Price";
             // 
@@ -90,38 +95,45 @@
             // 
             lstOut.FormattingEnabled = true;
             lstOut.ItemHeight = 15;
-            lstOut.Location = new Point(44, 244);
+            lstOut.Location = new Point(50, 215);
             lstOut.Name = "lstOut";
-            lstOut.Size = new Size(687, 154);
+            lstOut.Size = new Size(673, 184);
             lstOut.TabIndex = 6;
+            lstOut.TabStop = false;
             lstOut.SelectedIndexChanged += lstOut_SelectedIndexChanged;
             // 
-            // btn
+            // btnCalculateTotal
             // 
-            btn.Location = new Point(60, 415);
-            btn.Name = "btn";
-            btn.Size = new Size(75, 40);
-            btn.TabIndex = 7;
-            btn.Text = "Calculate &Total";
-            btn.UseVisualStyleBackColor = true;
-            btn.Click += button1_Click;
+            btnCalculateTotal.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCalculateTotal.ForeColor = Color.Blue;
+            btnCalculateTotal.Location = new Point(84, 415);
+            btnCalculateTotal.Name = "btnCalculateTotal";
+            btnCalculateTotal.Size = new Size(72, 61);
+            btnCalculateTotal.TabIndex = 5;
+            btnCalculateTotal.Text = "Calculate &Total";
+            btnCalculateTotal.UseVisualStyleBackColor = true;
+            btnCalculateTotal.Click += btnCalculateTotal_Click;
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(317, 419);
+            btnClear.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClear.ForeColor = Color.Blue;
+            btnClear.Location = new Point(335, 419);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(75, 36);
-            btnClear.TabIndex = 8;
+            btnClear.Size = new Size(75, 57);
+            btnClear.TabIndex = 6;
             btnClear.Text = "&Clear";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(586, 419);
+            btnQuit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnQuit.ForeColor = Color.Blue;
+            btnQuit.Location = new Point(602, 417);
             btnQuit.Name = "btnQuit";
-            btnQuit.Size = new Size(75, 36);
-            btnQuit.TabIndex = 9;
+            btnQuit.Size = new Size(81, 57);
+            btnQuit.TabIndex = 7;
             btnQuit.Text = "&Quit";
             btnQuit.UseVisualStyleBackColor = true;
             btnQuit.Click += btnQuit_Click;
@@ -133,7 +145,7 @@
             ClientSize = new Size(838, 527);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
-            Controls.Add(btn);
+            Controls.Add(btnCalculateTotal);
             Controls.Add(lstOut);
             Controls.Add(txtFoodPrice);
             Controls.Add(label3);
@@ -154,9 +166,9 @@
         private TextBox txtCustomerName;
         private Label label3;
         private TextBox txtFoodPrice;
-        private MaskedTextBox maskedTextBox1;
+      //  private MaskedTextBox maskedTextBox1;
         private ListBox lstOut;
-        private Button btn;
+        private Button btnCalculateTotal;
         private Button btnClear;
         private Button btnQuit;
     }
