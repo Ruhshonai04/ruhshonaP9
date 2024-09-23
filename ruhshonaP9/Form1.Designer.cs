@@ -67,10 +67,11 @@
             // 
             txtCustomerName.BackColor = SystemColors.Window;
             txtCustomerName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCustomerName.Location = new Point(233, 119);
+            txtCustomerName.Location = new Point(233, 113);
             txtCustomerName.Name = "txtCustomerName";
             txtCustomerName.Size = new Size(201, 23);
             txtCustomerName.TabIndex = 2;
+            txtCustomerName.TextChanged += txtCustomerName_TextChanged_1;
             txtCustomerName.Enter += txtCustomerName_Enter;
             txtCustomerName.Leave += txtCustomerName_Leave;
             // 
@@ -90,6 +91,7 @@
             txtFoodPrice.Name = "txtFoodPrice";
             txtFoodPrice.Size = new Size(159, 23);
             txtFoodPrice.TabIndex = 4;
+            txtFoodPrice.TextChanged += txtFoodPrice_TextChanged;
             // 
             // lstOut
             // 

@@ -53,16 +53,34 @@ namespace ruhshonaP9
 
         private void btnCalculateTotal_Click(object sender, EventArgs e)
         {
-            // input
+            double taxRate = .0875;
+            double price, totalPrice, taxAmount;
+            string RestaurantCustName;
 
+            // input
+            price = double.Parse(txtFoodPrice.Text);
+            RestaurantCustName = txtCustomerName.Text;
 
             //processing    
+            taxAmount = price * taxRate;
+            totalPrice = price * taxAmount;
 
 
             //output
+            lstOut.Items.Add("Customer Name is " + RestaurantCustName);
+            lstOut.Items.Add("Price is " + price.ToString("C2"));
+            lstOut.Items.Add("Tax Rate is " + taxRate.ToString("P2"));
+            lstOut.Items.Add("Tax amount is " + taxAmount.ToString("C2"));
+            lstOut.Items.Add("Total Price is " + totalPrice.ToString("C2"));
+
+
+
+            btnClear.Focus();
 
             // This chnages the focus to the clear button
-            btnClear.Focus();
+
+
+
 
         }
 
@@ -74,6 +92,16 @@ namespace ruhshonaP9
         private void txtCustomerName_Leave(object sender, EventArgs e)
         {
             txtCustomerName.BackColor = SystemColors.Window;
+        }
+
+        private void txtCustomerName_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFoodPrice_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
