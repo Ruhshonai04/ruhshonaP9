@@ -30,7 +30,7 @@
         {
             label1 = new Label();
             label2 = new Label();
-            txtCustomerName = new TextBox();
+            txtFoodMenu = new TextBox();
             label3 = new Label();
             txtFoodPrice = new TextBox();
             lstOut = new ListBox();
@@ -57,23 +57,24 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(60, 119);
+            label2.Location = new Point(70, 119);
             label2.Name = "label2";
-            label2.Size = new Size(107, 17);
+            label2.Size = new Size(78, 17);
             label2.TabIndex = 1;
-            label2.Text = "Costumer Name";
+            label2.Text = "Food Menu";
+            label2.Click += label2_Click;
             // 
-            // txtCustomerName
+            // txtFoodMenu
             // 
-            txtCustomerName.BackColor = SystemColors.Window;
-            txtCustomerName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCustomerName.Location = new Point(233, 113);
-            txtCustomerName.Name = "txtCustomerName";
-            txtCustomerName.Size = new Size(201, 23);
-            txtCustomerName.TabIndex = 2;
-            txtCustomerName.TextChanged += txtCustomerName_TextChanged_1;
-            txtCustomerName.Enter += txtCustomerName_Enter;
-            txtCustomerName.Leave += txtCustomerName_Leave;
+            txtFoodMenu.BackColor = SystemColors.Window;
+            txtFoodMenu.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtFoodMenu.Location = new Point(233, 113);
+            txtFoodMenu.Name = "txtFoodMenu";
+            txtFoodMenu.Size = new Size(201, 23);
+            txtFoodMenu.TabIndex = 2;
+            txtFoodMenu.TextChanged += txtFoodMenu_TextChanged;
+            txtFoodMenu.Enter += txtFoodMenu_Enter;
+            txtFoodMenu.Leave += txtFoodMenu_Leave;
             // 
             // label3
             // 
@@ -151,7 +152,7 @@
             Controls.Add(lstOut);
             Controls.Add(txtFoodPrice);
             Controls.Add(label3);
-            Controls.Add(txtCustomerName);
+            Controls.Add(txtFoodMenu);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
@@ -165,7 +166,7 @@
 
         private Label label1;
         private Label label2;
-        private TextBox txtCustomerName;
+        private TextBox txtFoodMenu;
         private Label label3;
         private TextBox txtFoodPrice;
       //  private MaskedTextBox maskedTextBox1;

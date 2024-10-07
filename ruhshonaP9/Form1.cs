@@ -1,7 +1,10 @@
+using System.Diagnostics.Eventing.Reader;
+
 namespace ruhshonaP9
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -25,10 +28,10 @@ namespace ruhshonaP9
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtCustomerName.Clear();
+            txtFoodMenu.Clear();
             txtFoodPrice.Clear();
             lstOut.Items.Clear();
-            txtCustomerName.Focus();
+            txtFoodMenu.Focus();
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
@@ -41,67 +44,74 @@ namespace ruhshonaP9
 
         }
 
-        private void txtCustomerName_TextChanged(object sender, EventArgs e)
-        {
+     
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCalculateTotal_Click(object sender, EventArgs e)
         {
-            double taxRate = .0875;
-            double price, totalPrice, taxAmount;
-            string RestaurantCustName;
+            double RestaurantTaxRate = .0875;
+            double price, totalPrice, RestaurantTaxAmount;
+            string RestaurantFoodMenu;
+            bool PriceValid;
+
+
 
             // input
-            price = double.Parse(txtFoodPrice.Text);
-            RestaurantCustName = txtCustomerName.Text;
+            // Parse converts string to double
+            // 
+            PriceValid = double.TryParse(txtFoodPrice.Text, out price);
 
-            //processing    
-            taxAmount = price * taxRate;
-            totalPrice = price * taxAmount;
+            if (PriceValid)
+            {
 
-
-            //output
-            lstOut.Items.Add("Customer Name is " + RestaurantCustName);
-            lstOut.Items.Add("Price is " + price.ToString("C2"));
-            lstOut.Items.Add("Tax Rate is " + taxRate.ToString("P2"));
-            lstOut.Items.Add("Tax amount is " + taxAmount.ToString("C2"));
-            lstOut.Items.Add("Total Price is " + totalPrice.ToString("C2"));
+                RestaurantFoodMenu = txtFoodMenu.Text;
 
 
+                //processing    
+                RestaurantTaxAmount = price * RestaurantTaxRate;
+                totalPrice = price * RestaurantTaxAmount;
 
-            btnClear.Focus();
 
-            // This chnages the focus to the clear button
+                //output
+                lstOut.Items.Add("Food Menu is " + RestaurantFoodMenu);
+                lstOut.Items.Add("Price is " + price.ToString("C2"));
+                lstOut.Items.Add("Tax Rate is " + RestaurantTaxRate.ToString("P2"));
+                lstOut.Items.Add("Tax amount is " + RestaurantTaxAmount.ToString("C2"));
+                lstOut.Items.Add("Total Price is " + totalPrice.ToString("C2"));
 
+                btnClear.Focus();
 
+                // This chnages the focus to the clear button
+
+            }
 
 
         }
 
-        private void txtCustomerName_Enter(object sender, EventArgs e)
+      
+        private void txtFoodMenu_Leave(object sender, EventArgs e)
         {
-            txtCustomerName.BackColor = Color.Bisque;
-        }
-
-        private void txtCustomerName_Leave(object sender, EventArgs e)
-        {
-            txtCustomerName.BackColor = SystemColors.Window;
-        }
-
-        private void txtCustomerName_TextChanged_1(object sender, EventArgs e)
-        {
-
+            txtFoodMenu.BackColor = SystemColors.Window;
         }
 
         private void txtFoodPrice_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFoodMenu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFoodMenu_Enter(object sender, EventArgs e)
+        {
+            txtFoodMenu.BackColor = Color.Bisque;
         }
     }
 }
