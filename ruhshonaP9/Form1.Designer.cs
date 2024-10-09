@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
-            txtFoodMenu = new TextBox();
+            lblMenuItem = new Label();
+            txtMenuItem = new TextBox();
             label3 = new Label();
             txtFoodPrice = new TextBox();
             lstOut = new ListBox();
@@ -51,30 +51,28 @@
             label1.Text = "Food Restaurant";
             label1.Click += label1_Click;
             // 
-            // label2
+            // lblMenuItem
             // 
-            label2.AllowDrop = true;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(70, 119);
-            label2.Name = "label2";
-            label2.Size = new Size(78, 17);
-            label2.TabIndex = 1;
-            label2.Text = "Food Menu";
-            label2.Click += label2_Click;
+            lblMenuItem.AllowDrop = true;
+            lblMenuItem.AutoSize = true;
+            lblMenuItem.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMenuItem.ForeColor = SystemColors.ControlText;
+            lblMenuItem.Location = new Point(70, 119);
+            lblMenuItem.Name = "lblMenuItem";
+            lblMenuItem.Size = new Size(75, 17);
+            lblMenuItem.TabIndex = 1;
+            lblMenuItem.Text = "Menu Item\r\n";
             // 
-            // txtFoodMenu
+            // txtMenuItem
             // 
-            txtFoodMenu.BackColor = SystemColors.Window;
-            txtFoodMenu.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtFoodMenu.Location = new Point(233, 113);
-            txtFoodMenu.Name = "txtFoodMenu";
-            txtFoodMenu.Size = new Size(201, 23);
-            txtFoodMenu.TabIndex = 2;
-            txtFoodMenu.TextChanged += txtFoodMenu_TextChanged;
-            txtFoodMenu.Enter += txtFoodMenu_Enter;
-            txtFoodMenu.Leave += txtFoodMenu_Leave;
+            txtMenuItem.BackColor = SystemColors.Window;
+            txtMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtMenuItem.Location = new Point(233, 113);
+            txtMenuItem.Name = "txtMenuItem";
+            txtMenuItem.Size = new Size(201, 23);
+            txtMenuItem.TabIndex = 2;
+            txtMenuItem.Enter += txtMenuItem_Enter;
+            txtMenuItem.Leave += txtMenuItem_Leave;
             // 
             // label3
             // 
@@ -152,8 +150,8 @@
             Controls.Add(lstOut);
             Controls.Add(txtFoodPrice);
             Controls.Add(label3);
-            Controls.Add(txtFoodMenu);
-            Controls.Add(label2);
+            Controls.Add(txtMenuItem);
+            Controls.Add(lblMenuItem);
             Controls.Add(label1);
             Name = "Form1";
             Text = "ruhshona";
@@ -165,8 +163,8 @@
         #endregion
 
         private Label label1;
-        private Label label2;
-        private TextBox txtFoodMenu;
+        private Label lblMenuItem;
+        private TextBox txtMenuItem;
         private Label label3;
         private TextBox txtFoodPrice;
       //  private MaskedTextBox maskedTextBox1;
