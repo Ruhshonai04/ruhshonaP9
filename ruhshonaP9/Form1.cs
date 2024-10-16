@@ -17,6 +17,9 @@ namespace ruhshonaP9
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // this makes the checked changed procedure run ( it doesn't run if set in designer)
+           // rdoEconomy.Checked = true;
+
 
         }
 
@@ -80,9 +83,9 @@ namespace ruhshonaP9
 
                 //processing    
                 RestaurantTaxAmount = Foodprice * RestaurantTaxRate;
-                totalFoodlPrice = Foodprice * RestaurantTaxAmount;
+                totalFoodlPrice = Foodprice + RestaurantTaxAmount;
                 //output
-                
+
                 lstOut.Items.Add("Menu Item is " + RestaurantMenuItem);
                 lstOut.Items.Add("Price is " + Foodprice.ToString("C2"));
                 lstOut.Items.Add("Tax Rate is " + RestaurantTaxRate.ToString("P2"));
@@ -90,7 +93,7 @@ namespace ruhshonaP9
                 lstOut.Items.Add("Total Food Price is " + totalFoodlPrice.ToString("C2"));
 
                 btnClear.Focus();
-                
+
 
                 // This chnages the focus to the clear button
 
@@ -120,5 +123,7 @@ namespace ruhshonaP9
         {
             txtMenuItem.BackColor = SystemColors.Window;
         }
+
+        
     }
 }
