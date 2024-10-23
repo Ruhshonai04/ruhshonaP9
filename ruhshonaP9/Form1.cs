@@ -4,6 +4,12 @@ namespace ruhshonaP9
 {
     public partial class Form1 : Form
     {
+        private string FoodType;
+        const string Appetizers = "Appetizers";
+        const string Desserts = "Desserts";
+        const string Drinks = "Drinks";
+
+        private string ResturantTrasactionLog = "ResturantTransLog.txt";
 
         public Form1()
         {
@@ -18,7 +24,7 @@ namespace ruhshonaP9
         private void Form1_Load(object sender, EventArgs e)
         {
             // this makes the checked changed procedure run ( it doesn't run if set in designer)
-           // rdoEconomy.Checked = true;
+            // rdoEconomy.Checked = true;
 
 
         }
@@ -102,6 +108,7 @@ namespace ruhshonaP9
 
         }
 
+        
 
         private void txtFoodPrice_TextChanged(object sender, EventArgs e)
         {
@@ -124,6 +131,9 @@ namespace ruhshonaP9
             txtMenuItem.BackColor = SystemColors.Window;
         }
 
-        
+        private void grpDishtypes_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
