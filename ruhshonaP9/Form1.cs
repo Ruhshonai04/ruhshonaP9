@@ -5,8 +5,8 @@ namespace ruhshonaP9
     public partial class Form1 : Form
     {
         private string FoodType;
-        const string Appetizers = "Appetizers";
-        const string Desserts = "Desserts";
+        const string APPETIZERS = "Appetizers";
+        const string DESSERTS = "Desserts";
         const string Drinks = "Drinks";
 
         private string ResturantTrasactionLog = "ResturantTransLog.txt";
@@ -18,6 +18,7 @@ namespace ruhshonaP9
 
         private void label1_Click(object sender, EventArgs e)
         {
+          
 
         }
 
@@ -47,7 +48,7 @@ namespace ruhshonaP9
         {
             DialogResult ButtonSelected;
 
-            ButtonSelected = MessageBox.Show("Do you really want to Quit", "Exiting Page...",
+            ButtonSelected = MessageBox.Show("Do you really want to Quit?", "Exiting Page...",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
             if (ButtonSelected == DialogResult.Yes)
@@ -69,10 +70,11 @@ namespace ruhshonaP9
 
         private void btnCalculateTotal_Click(object sender, EventArgs e)
         {
-            double RestaurantTaxRate = .0875;
+            double RestaurantTaxRate = .08875;
             double Foodprice, totalFoodlPrice, RestaurantTaxAmount;
             string RestaurantMenuItem;
-            bool PriceValid;
+            bool PriceValid; 
+
 
 
 
@@ -80,6 +82,7 @@ namespace ruhshonaP9
             // Parse converts string to double
             // 
             PriceValid = double.TryParse(txtFoodPrice.Text, out Foodprice);
+
 
             if (PriceValid)
             {

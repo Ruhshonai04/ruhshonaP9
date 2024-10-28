@@ -37,21 +37,21 @@
             btnCalculateTotal = new Button();
             btnClear = new Button();
             btnQuit = new Button();
-            grpDishtypes = new GroupBox();
-            radioButton2 = new RadioButton();
+            grpEatingIn = new GroupBox();
+            rdoDesserts = new RadioButton();
             rdoDrinks = new RadioButton();
             rdoAppetizers = new RadioButton();
-            grpDishtypes.SuspendLayout();
+            grpEatingIn.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Cooper Black", 19F, FontStyle.Italic | FontStyle.Underline);
+            label1.Font = new Font("Microsoft Sans Serif", 19F, FontStyle.Italic | FontStyle.Underline);
             label1.ForeColor = Color.Crimson;
-            label1.Location = new Point(304, 25);
+            label1.Location = new Point(327, 0);
             label1.Name = "label1";
-            label1.Size = new Size(235, 30);
+            label1.Size = new Size(402, 59);
             label1.TabIndex = 0;
             label1.Text = "Food Restaurant";
             label1.Click += label1_Click;
@@ -62,9 +62,9 @@
             lblMenuItem.AutoSize = true;
             lblMenuItem.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMenuItem.ForeColor = SystemColors.ControlText;
-            lblMenuItem.Location = new Point(78, 149);
+            lblMenuItem.Location = new Point(57, 207);
             lblMenuItem.Name = "lblMenuItem";
-            lblMenuItem.Size = new Size(75, 17);
+            lblMenuItem.Size = new Size(149, 36);
             lblMenuItem.TabIndex = 1;
             lblMenuItem.Text = "Menu Item\r\n";
             // 
@@ -72,9 +72,9 @@
             // 
             txtMenuItem.BackColor = SystemColors.Window;
             txtMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtMenuItem.Location = new Point(218, 148);
+            txtMenuItem.Location = new Point(216, 204);
             txtMenuItem.Name = "txtMenuItem";
-            txtMenuItem.Size = new Size(229, 23);
+            txtMenuItem.Size = new Size(229, 39);
             txtMenuItem.TabIndex = 2;
             txtMenuItem.Enter += txtMenuItem_Enter;
             txtMenuItem.Leave += txtMenuItem_Leave;
@@ -83,17 +83,17 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(80, 200);
+            label3.Location = new Point(74, 267);
             label3.Name = "label3";
-            label3.Size = new Size(73, 17);
+            label3.Size = new Size(143, 36);
             label3.TabIndex = 3;
             label3.Text = "Food Price";
             // 
             // txtFoodPrice
             // 
-            txtFoodPrice.Location = new Point(229, 194);
+            txtFoodPrice.Location = new Point(229, 266);
             txtFoodPrice.Name = "txtFoodPrice";
-            txtFoodPrice.Size = new Size(181, 23);
+            txtFoodPrice.Size = new Size(181, 37);
             txtFoodPrice.TabIndex = 4;
             txtFoodPrice.TextChanged += txtFoodPrice_TextChanged;
             // 
@@ -101,10 +101,10 @@
             // 
             lstOut.Font = new Font("Segoe UI Symbol", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lstOut.FormattingEnabled = true;
-            lstOut.ItemHeight = 17;
-            lstOut.Location = new Point(42, 223);
+            lstOut.ItemHeight = 36;
+            lstOut.Location = new Point(57, 332);
             lstOut.Name = "lstOut";
-            lstOut.Size = new Size(738, 174);
+            lstOut.Size = new Size(780, 220);
             lstOut.TabIndex = 6;
             lstOut.TabStop = false;
             lstOut.SelectedIndexChanged += lstOut_SelectedIndexChanged;
@@ -113,9 +113,9 @@
             // 
             btnCalculateTotal.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCalculateTotal.ForeColor = Color.Blue;
-            btnCalculateTotal.Location = new Point(78, 432);
+            btnCalculateTotal.Location = new Point(98, 568);
             btnCalculateTotal.Name = "btnCalculateTotal";
-            btnCalculateTotal.Size = new Size(82, 61);
+            btnCalculateTotal.Size = new Size(125, 78);
             btnCalculateTotal.TabIndex = 5;
             btnCalculateTotal.Text = "Calculate &Total";
             btnCalculateTotal.UseVisualStyleBackColor = true;
@@ -125,9 +125,9 @@
             // 
             btnClear.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClear.ForeColor = Color.Blue;
-            btnClear.Location = new Point(374, 434);
+            btnClear.Location = new Point(366, 568);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(86, 57);
+            btnClear.Size = new Size(109, 74);
             btnClear.TabIndex = 6;
             btnClear.Text = "&Clear";
             btnClear.UseVisualStyleBackColor = true;
@@ -137,50 +137,50 @@
             // 
             btnQuit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnQuit.ForeColor = Color.Blue;
-            btnQuit.Location = new Point(670, 432);
+            btnQuit.Location = new Point(631, 568);
             btnQuit.Name = "btnQuit";
-            btnQuit.Size = new Size(93, 57);
+            btnQuit.Size = new Size(124, 66);
             btnQuit.TabIndex = 7;
             btnQuit.Text = "&Quit";
             btnQuit.UseVisualStyleBackColor = true;
             btnQuit.Click += btnQuit_Click;
             // 
-            // grpDishtypes
+            // grpEatingIn
             // 
-            grpDishtypes.BackColor = Color.FromArgb(255, 192, 192);
-            grpDishtypes.BackgroundImageLayout = ImageLayout.None;
-            grpDishtypes.Controls.Add(radioButton2);
-            grpDishtypes.Controls.Add(rdoDrinks);
-            grpDishtypes.Controls.Add(rdoAppetizers);
-            grpDishtypes.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            grpDishtypes.ForeColor = SystemColors.ActiveCaptionText;
-            grpDishtypes.Location = new Point(57, 70);
-            grpDishtypes.Name = "grpDishtypes";
-            grpDishtypes.Size = new Size(723, 67);
-            grpDishtypes.TabIndex = 8;
-            grpDishtypes.TabStop = false;
-            grpDishtypes.Text = "Dish Types";
-            grpDishtypes.UseWaitCursor = true;
-            grpDishtypes.Enter += grpDishtypes_Enter;
+            grpEatingIn.BackColor = Color.Transparent;
+            grpEatingIn.BackgroundImageLayout = ImageLayout.None;
+            grpEatingIn.Controls.Add(rdoDesserts);
+            grpEatingIn.Controls.Add(rdoDrinks);
+            grpEatingIn.Controls.Add(rdoAppetizers);
+            grpEatingIn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpEatingIn.ForeColor = SystemColors.ActiveCaptionText;
+            grpEatingIn.Location = new Point(57, 95);
+            grpEatingIn.Name = "grpEatingIn";
+            grpEatingIn.Size = new Size(752, 103);
+            grpEatingIn.TabIndex = 8;
+            grpEatingIn.TabStop = false;
+            grpEatingIn.Text = "Eating In";
+            grpEatingIn.UseWaitCursor = true;
+            grpEatingIn.Enter += grpDishtypes_Enter;
             // 
-            // radioButton2
+            // rdoDesserts
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(309, 32);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(78, 21);
-            radioButton2.TabIndex = 9;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Desserts";
-            radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.UseWaitCursor = true;
+            rdoDesserts.AutoSize = true;
+            rdoDesserts.Location = new Point(309, 32);
+            rdoDesserts.Name = "rdoDesserts";
+            rdoDesserts.Size = new Size(147, 40);
+            rdoDesserts.TabIndex = 9;
+            rdoDesserts.TabStop = true;
+            rdoDesserts.Text = "Desserts";
+            rdoDesserts.UseVisualStyleBackColor = true;
+            rdoDesserts.UseWaitCursor = true;
             // 
             // rdoDrinks
             // 
             rdoDrinks.AutoSize = true;
             rdoDrinks.Location = new Point(608, 32);
             rdoDrinks.Name = "rdoDrinks";
-            rdoDrinks.Size = new Size(66, 21);
+            rdoDrinks.Size = new Size(124, 40);
             rdoDrinks.TabIndex = 10;
             rdoDrinks.TabStop = true;
             rdoDrinks.Text = "Drinks";
@@ -192,7 +192,7 @@
             rdoAppetizers.AutoSize = true;
             rdoAppetizers.Location = new Point(7, 32);
             rdoAppetizers.Name = "rdoAppetizers";
-            rdoAppetizers.Size = new Size(91, 21);
+            rdoAppetizers.Size = new Size(174, 40);
             rdoAppetizers.TabIndex = 0;
             rdoAppetizers.TabStop = true;
             rdoAppetizers.Text = "Appetizers";
@@ -201,10 +201,10 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 15F);
+            AutoScaleDimensions = new SizeF(16F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(818, 530);
-            Controls.Add(grpDishtypes);
+            ClientSize = new Size(1222, 714);
+            Controls.Add(grpEatingIn);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
             Controls.Add(btnCalculateTotal);
@@ -214,12 +214,12 @@
             Controls.Add(txtMenuItem);
             Controls.Add(lblMenuItem);
             Controls.Add(label1);
-            Font = new Font("Lucida Bright", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Name = "Form1";
             Text = "ruhshona";
             Load += Form1_Load;
-            grpDishtypes.ResumeLayout(false);
-            grpDishtypes.PerformLayout();
+            grpEatingIn.ResumeLayout(false);
+            grpEatingIn.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -236,8 +236,8 @@
         private Button btnCalculateTotal;
         private Button btnClear;
         private Button btnQuit;
-        private GroupBox grpDishtypes;
-        private RadioButton radioButton2;
+        private GroupBox grpEatingIn;
+        private RadioButton rdoDesserts;
         private RadioButton rdoDrinks;
         private RadioButton rdoAppetizers;
     }
