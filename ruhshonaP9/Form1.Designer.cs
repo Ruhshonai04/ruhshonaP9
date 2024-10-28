@@ -38,9 +38,9 @@
             btnClear = new Button();
             btnQuit = new Button();
             grpEatingIn = new GroupBox();
-            rdoDesserts = new RadioButton();
-            rdoDrinks = new RadioButton();
-            rdoAppetizers = new RadioButton();
+            rdoEatIn = new RadioButton();
+            rdoDelivery = new RadioButton();
+            rdoTakeOut = new RadioButton();
             grpEatingIn.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,10 +51,9 @@
             label1.ForeColor = Color.Crimson;
             label1.Location = new Point(327, 0);
             label1.Name = "label1";
-            label1.Size = new Size(402, 59);
+            label1.Size = new Size(203, 30);
             label1.TabIndex = 0;
             label1.Text = "Food Restaurant";
-            label1.Click += label1_Click;
             // 
             // lblMenuItem
             // 
@@ -64,7 +63,7 @@
             lblMenuItem.ForeColor = SystemColors.ControlText;
             lblMenuItem.Location = new Point(57, 207);
             lblMenuItem.Name = "lblMenuItem";
-            lblMenuItem.Size = new Size(149, 36);
+            lblMenuItem.Size = new Size(75, 17);
             lblMenuItem.TabIndex = 1;
             lblMenuItem.Text = "Menu Item\r\n";
             // 
@@ -74,7 +73,7 @@
             txtMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtMenuItem.Location = new Point(216, 204);
             txtMenuItem.Name = "txtMenuItem";
-            txtMenuItem.Size = new Size(229, 39);
+            txtMenuItem.Size = new Size(229, 23);
             txtMenuItem.TabIndex = 2;
             txtMenuItem.Enter += txtMenuItem_Enter;
             txtMenuItem.Leave += txtMenuItem_Leave;
@@ -85,7 +84,7 @@
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(74, 267);
             label3.Name = "label3";
-            label3.Size = new Size(143, 36);
+            label3.Size = new Size(73, 17);
             label3.TabIndex = 3;
             label3.Text = "Food Price";
             // 
@@ -93,21 +92,19 @@
             // 
             txtFoodPrice.Location = new Point(229, 266);
             txtFoodPrice.Name = "txtFoodPrice";
-            txtFoodPrice.Size = new Size(181, 37);
+            txtFoodPrice.Size = new Size(181, 22);
             txtFoodPrice.TabIndex = 4;
-            txtFoodPrice.TextChanged += txtFoodPrice_TextChanged;
             // 
             // lstOut
             // 
             lstOut.Font = new Font("Segoe UI Symbol", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lstOut.FormattingEnabled = true;
-            lstOut.ItemHeight = 36;
+            lstOut.ItemHeight = 17;
             lstOut.Location = new Point(57, 332);
             lstOut.Name = "lstOut";
-            lstOut.Size = new Size(780, 220);
+            lstOut.Size = new Size(780, 208);
             lstOut.TabIndex = 6;
             lstOut.TabStop = false;
-            lstOut.SelectedIndexChanged += lstOut_SelectedIndexChanged;
             // 
             // btnCalculateTotal
             // 
@@ -149,9 +146,9 @@
             // 
             grpEatingIn.BackColor = Color.Transparent;
             grpEatingIn.BackgroundImageLayout = ImageLayout.None;
-            grpEatingIn.Controls.Add(rdoDesserts);
-            grpEatingIn.Controls.Add(rdoDrinks);
-            grpEatingIn.Controls.Add(rdoAppetizers);
+            grpEatingIn.Controls.Add(rdoEatIn);
+            grpEatingIn.Controls.Add(rdoDelivery);
+            grpEatingIn.Controls.Add(rdoTakeOut);
             grpEatingIn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpEatingIn.ForeColor = SystemColors.ActiveCaptionText;
             grpEatingIn.Location = new Point(57, 95);
@@ -159,49 +156,50 @@
             grpEatingIn.Size = new Size(752, 103);
             grpEatingIn.TabIndex = 8;
             grpEatingIn.TabStop = false;
-            grpEatingIn.Text = "Eating In";
+            grpEatingIn.Text = "Dining Options";
             grpEatingIn.UseWaitCursor = true;
-            grpEatingIn.Enter += grpDishtypes_Enter;
             // 
-            // rdoDesserts
+            // rdoEatIn
             // 
-            rdoDesserts.AutoSize = true;
-            rdoDesserts.Location = new Point(309, 32);
-            rdoDesserts.Name = "rdoDesserts";
-            rdoDesserts.Size = new Size(147, 40);
-            rdoDesserts.TabIndex = 9;
-            rdoDesserts.TabStop = true;
-            rdoDesserts.Text = "Desserts";
-            rdoDesserts.UseVisualStyleBackColor = true;
-            rdoDesserts.UseWaitCursor = true;
+            rdoEatIn.AutoSize = true;
+            rdoEatIn.Location = new Point(309, 32);
+            rdoEatIn.Name = "rdoEatIn";
+            rdoEatIn.Size = new Size(61, 21);
+            rdoEatIn.TabIndex = 9;
+            rdoEatIn.TabStop = true;
+            rdoEatIn.Text = "Eat In";
+            rdoEatIn.UseVisualStyleBackColor = true;
+            rdoEatIn.UseWaitCursor = true;
             // 
-            // rdoDrinks
+            // rdoDelivery
             // 
-            rdoDrinks.AutoSize = true;
-            rdoDrinks.Location = new Point(608, 32);
-            rdoDrinks.Name = "rdoDrinks";
-            rdoDrinks.Size = new Size(124, 40);
-            rdoDrinks.TabIndex = 10;
-            rdoDrinks.TabStop = true;
-            rdoDrinks.Text = "Drinks";
-            rdoDrinks.UseVisualStyleBackColor = true;
-            rdoDrinks.UseWaitCursor = true;
+            rdoDelivery.AutoSize = true;
+            rdoDelivery.Location = new Point(608, 32);
+            rdoDelivery.Name = "rdoDelivery";
+            rdoDelivery.Size = new Size(76, 21);
+            rdoDelivery.TabIndex = 10;
+            rdoDelivery.TabStop = true;
+            rdoDelivery.Text = "delivery";
+            rdoDelivery.UseVisualStyleBackColor = true;
+            rdoDelivery.UseWaitCursor = true;
             // 
-            // rdoAppetizers
+            // rdoTakeOut
             // 
-            rdoAppetizers.AutoSize = true;
-            rdoAppetizers.Location = new Point(7, 32);
-            rdoAppetizers.Name = "rdoAppetizers";
-            rdoAppetizers.Size = new Size(174, 40);
-            rdoAppetizers.TabIndex = 0;
-            rdoAppetizers.TabStop = true;
-            rdoAppetizers.Text = "Appetizers";
-            rdoAppetizers.UseVisualStyleBackColor = true;
-            rdoAppetizers.UseWaitCursor = true;
+            rdoTakeOut.AccessibleRole = AccessibleRole.MenuBar;
+            rdoTakeOut.AutoSize = true;
+            rdoTakeOut.Location = new Point(7, 32);
+            rdoTakeOut.Name = "rdoTakeOut";
+            rdoTakeOut.Size = new Size(81, 21);
+            rdoTakeOut.TabIndex = 0;
+            rdoTakeOut.TabStop = true;
+            rdoTakeOut.Text = "Take Out";
+            rdoTakeOut.UseVisualStyleBackColor = true;
+            rdoTakeOut.UseWaitCursor = true;
+            rdoTakeOut.CheckedChanged += rdoTakeOut_CheckedChanged;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(16F, 30F);
+            AutoScaleDimensions = new SizeF(9F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1222, 714);
             Controls.Add(grpEatingIn);
@@ -237,8 +235,8 @@
         private Button btnClear;
         private Button btnQuit;
         private GroupBox grpEatingIn;
-        private RadioButton rdoDesserts;
-        private RadioButton rdoDrinks;
-        private RadioButton rdoAppetizers;
+        private RadioButton rdoEatIn;
+        private RadioButton rdoDelivery;
+        private RadioButton rdoTakeOut;
     }
 }

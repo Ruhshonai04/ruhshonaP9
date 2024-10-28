@@ -4,10 +4,10 @@ namespace ruhshonaP9
 {
     public partial class Form1 : Form
     {
-        private string FoodType;
-        const string APPETIZERS = "Appetizers";
-        const string DESSERTS = "Desserts";
-        const string Drinks = "Drinks";
+        private string DiningOption;
+        const string TAKE_OUT = "Take Out";
+        const string EAT_IN = "Eat In";
+        const string DELIVERY = "Delivery";
 
         private string ResturantTrasactionLog = "ResturantTransLog.txt";
 
@@ -16,11 +16,6 @@ namespace ruhshonaP9
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-          
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -29,12 +24,6 @@ namespace ruhshonaP9
 
 
         }
-
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -60,12 +49,6 @@ namespace ruhshonaP9
             }
         }
 
-        private void lstOut_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
 
 
         private void btnCalculateTotal_Click(object sender, EventArgs e)
@@ -73,7 +56,7 @@ namespace ruhshonaP9
             double RestaurantTaxRate = .08875;
             double Foodprice, totalFoodlPrice, RestaurantTaxAmount;
             string RestaurantMenuItem;
-            bool PriceValid; 
+            bool PriceValid;
 
 
 
@@ -111,12 +94,8 @@ namespace ruhshonaP9
 
         }
 
-        
 
-        private void txtFoodPrice_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
 
         private void txtMenuItem_Enter(object sender, EventArgs e)
@@ -124,17 +103,14 @@ namespace ruhshonaP9
             txtMenuItem.BackColor = Color.Bisque;
         }
 
-        private void txtMenuItem_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void txtMenuItem_Leave(object sender, EventArgs e)
         {
             txtMenuItem.BackColor = SystemColors.Window;
         }
 
-        private void grpDishtypes_Enter(object sender, EventArgs e)
+        private void rdoTakeOut_CheckedChanged(object sender, EventArgs e)
         {
 
         }
