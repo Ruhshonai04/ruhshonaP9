@@ -3,16 +3,13 @@ using System.Diagnostics.Eventing.Reader;
 namespace ruhshonaP9
 {
     public partial class Form1 : Form
-    {
-        private string DiningOption;
+    }
         const string TAKE_OUT = "Take Out";
+        private string DiningOption = TAKE_OUT;
         const string EAT_IN = "Eat In";
         const string DELIVERY = "Delivery";
-        double RestaurantTaxRate = .08875;
-        private double TakeOutFee = 0;
-        private double EatInFee = 10;
-        private double DeliveryFee 15;
-
+        
+     
         private string ResturantTrasactionLog = "ResturantTransLog.txt";
         private string ResturantConfig = "ResturantConfig.txt";
 
@@ -93,34 +90,33 @@ namespace ruhshonaP9
             double Foodprice, totalFoodlPrice, RestaurantTaxAmount;
             string RestaurantMenuItem;
             bool PriceValid;
+            double RestaurantTaxRate = .08875;
+            double TakeOutFee = 5;
+            double EatInFee = 10;
+            double DeliveryFee 15;
+            double DiningInFee = 0;
 
 
-
-
-            // input
-            // Parse converts string to double
-            // 
-            PriceValid = double.TryParse(txtFoodPrice.Text, out Foodprice);
+// input
+// Parse converts string to double
+// 
+PriceValid = double.TryParse(txtFoodPrice.Text, out Foodprice);
 
 
             if (PriceValid)
             {
-                switch (DiningIn)
-                {
-                    case TAKE_OUT:
-                        DiningInFee = TakeOutFee
+        switch (DiningOption)
+        {
+            case TAKE_OUT:
+                DiningInFee = TakeOutFee
                             break;
-                    case EAT_IN:
-                        DiningInFee = EatInFee
+            case EAT_IN:
+                DiningInFee = EatInFee
                             break;
-                    case DELIVER:
-                        DiningInFee = DeliveryFee
+            case DELIVER:
+                DiningInFee = DeliveryFee
                             break;
-
-
-
-
-                }
+        }
 
                 RestaurantMenuItem = txtMenuItem.Text;
 
