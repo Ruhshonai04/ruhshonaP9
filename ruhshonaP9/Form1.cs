@@ -3,15 +3,20 @@ using System.Diagnostics.Eventing.Reader;
 namespace ruhshonaP9
 {
     public partial class Form1 : Form
-    }
+    {
         const string TAKE_OUT = "Take Out";
         private string DiningOption = TAKE_OUT;
         const string EAT_IN = "Eat In";
         const string DELIVERY = "Delivery";
-        
-     
+         
+        private double RestaurantTaxRate = .08875;
+        private double TakeOutFee = 5;
+        private double EatInFee = 10;
+        private double DeliveryFee = 15;
+        private double DiningInFee = 0;
+
         private string ResturantTrasactionLog = "ResturantTransLog.txt";
-        private string ResturantConfig = "ResturantConfig.txt";
+        private string RestaurantConfig = "ResturantConfig.txt";
 
         public Form1()
         {
@@ -31,7 +36,7 @@ namespace ruhshonaP9
             {
                 try
                 {
-                    reader = File.OpenText(restaurantConfig);
+                    reader = File.OpenText(RestaurantConfig);
                     fileBad = false;
                     valValid = double.TryParse(reader.ReadLine(), out RestaurantTaxRate);
 
@@ -43,14 +48,13 @@ namespace ruhshonaP9
                 }
                 catch (FileNotFoundException ex)
                 {
-                    MessageBox.Show("The configuation flie was not found. Please select a different file \n Error message was:"
-
+                    MessageBox.Show("The configuation flie was not found. Please select a different file \n Error message was:" +
 
                     ex.Message
                     );
                     openFileDialog1.InitialDirectory = Application.StartupPath;
                     openFileDialog1.ShowDialog();
-                    restaurantConfig = openFileDialog1.FileName;
+                    RestaurantConfig = openFileDialog1.FileName;
 
                 }
             } while (fileBad);
@@ -90,33 +94,29 @@ namespace ruhshonaP9
             double Foodprice, totalFoodlPrice, RestaurantTaxAmount;
             string RestaurantMenuItem;
             bool PriceValid;
-            double RestaurantTaxRate = .08875;
-            double TakeOutFee = 5;
-            double EatInFee = 10;
-            double DeliveryFee 15;
-            double DiningInFee = 0;
+           
 
 
-// input
-// Parse converts string to double
-// 
-PriceValid = double.TryParse(txtFoodPrice.Text, out Foodprice);
+            // input
+            // Parse converts string to double
+            // 
+            PriceValid = double.TryParse(txtFoodPrice.Text, out Foodprice);
 
 
             if (PriceValid)
             {
-        switch (DiningOption)
-        {
-            case TAKE_OUT:
-                DiningInFee = TakeOutFee
-                            break;
-            case EAT_IN:
-                DiningInFee = EatInFee
-                            break;
-            case DELIVER:
-                DiningInFee = DeliveryFee
-                            break;
-        }
+                switch (DiningOption)
+                {
+                    case TAKE_OUT:
+                        DiningOptionFee = TakeOutFee;
+                        break;
+                    case EAT_IN:
+                        DiningOptionFee = EatInFee;
+                        break;
+                    case DELIVERY:
+                        DiningOptionFee = DeliveryFee;
+                        break;
+                }
 
                 RestaurantMenuItem = txtMenuItem.Text;
 
@@ -128,6 +128,8 @@ PriceValid = double.TryParse(txtFoodPrice.Text, out Foodprice);
 
                 lstOut.Items.Add("Menu Item is " + RestaurantMenuItem);
                 lstOut.Items.Add("Price is " + Foodprice.ToString("C2"));
+                lstOut.Items.Add("Dining Option = " + DiningOption);
+                lstOut.Items.Add("Dining Fee = " + DiningInFee);
                 lstOut.Items.Add("Tax Rate is " + RestaurantTaxRate.ToString("P2"));
                 lstOut.Items.Add("Tax amount is " + RestaurantTaxAmount.ToString("C2"));
                 lstOut.Items.Add("Total Food Price is " + totalFoodlPrice.ToString("C2"));
