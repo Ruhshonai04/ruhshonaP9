@@ -8,8 +8,13 @@ namespace ruhshonaP9
         const string TAKE_OUT = "Take Out";
         const string EAT_IN = "Eat In";
         const string DELIVERY = "Delivery";
+        double RestaurantTaxRate = .08875;
+        private double TakeOutFee = 0;
+        private double EatInFee = 10;
+        private double DeliveryFee 15;
 
         private string ResturantTrasactionLog = "ResturantTransLog.txt";
+        private string ResturantConfig = "ResturantConfig.txt";
 
         public Form1()
         {
@@ -21,8 +26,37 @@ namespace ruhshonaP9
         {
             // this makes the checked changed procedure run ( it doesn't run if set in designer)
             // rdoEconomy.Checked = true;
+            rdoTakeOut.Checked = true;
+            StreamReader reader;
+            bool valValid;
+            bool fileBad = true;
+            do
+            {
+                try
+                {
+                    reader = File.OpenText(restaurantConfig);
+                    fileBad = false;
+                    valValid = double.TryParse(reader.ReadLine(), out RestaurantTaxRate);
+
+                    valValid = double.TryParse(reader.ReadLine(), out TakeOutFee);
+
+                    valValid = double.TryParse(reader.ReadLine(), out EatInFee);
+                    valValid = double.TryParse(reader.ReadLine(), out DeliveryFee);
+                    reader.Close();
+                }
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show("The configuation flie was not found. Please select a different file \n Error message was:"
 
 
+                    ex.Message
+                    );
+                    openFileDialog1.InitialDirectory = Application.StartupPath;
+                    openFileDialog1.ShowDialog();
+                    restaurantConfig = openFileDialog1.FileName;
+
+                }
+            } while (fileBad);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -32,6 +66,8 @@ namespace ruhshonaP9
             lstOut.Items.Clear();
             txtMenuItem.Focus();
         }
+
+
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
@@ -53,7 +89,7 @@ namespace ruhshonaP9
 
         private void btnCalculateTotal_Click(object sender, EventArgs e)
         {
-            double RestaurantTaxRate = .08875;
+
             double Foodprice, totalFoodlPrice, RestaurantTaxAmount;
             string RestaurantMenuItem;
             bool PriceValid;
@@ -69,6 +105,22 @@ namespace ruhshonaP9
 
             if (PriceValid)
             {
+                switch (DiningIn)
+                {
+                    case TAKE_OUT:
+                        DiningInFee = TakeOutFee
+                            break;
+                    case EAT_IN:
+                        DiningInFee = EatInFee
+                            break;
+                    case DELIVER:
+                        DiningInFee = DeliveryFee
+                            break;
+
+
+
+
+                }
 
                 RestaurantMenuItem = txtMenuItem.Text;
 
@@ -96,8 +148,6 @@ namespace ruhshonaP9
 
 
 
-
-
         private void txtMenuItem_Enter(object sender, EventArgs e)
         {
             txtMenuItem.BackColor = Color.Bisque;
@@ -111,6 +161,11 @@ namespace ruhshonaP9
         }
 
         private void rdoTakeOut_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpEatingIn_Enter(object sender, EventArgs e)
         {
 
         }

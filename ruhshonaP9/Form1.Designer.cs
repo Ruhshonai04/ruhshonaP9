@@ -41,6 +41,7 @@
             rdoEatIn = new RadioButton();
             rdoDelivery = new RadioButton();
             rdoTakeOut = new RadioButton();
+            openFileDialog1 = new OpenFileDialog();
             grpEatingIn.SuspendLayout();
             SuspendLayout();
             // 
@@ -158,6 +159,7 @@
             grpEatingIn.TabStop = false;
             grpEatingIn.Text = "Dining Options";
             grpEatingIn.UseWaitCursor = true;
+            grpEatingIn.Enter += grpEatingIn_Enter;
             // 
             // rdoEatIn
             // 
@@ -176,10 +178,10 @@
             rdoDelivery.AutoSize = true;
             rdoDelivery.Location = new Point(608, 32);
             rdoDelivery.Name = "rdoDelivery";
-            rdoDelivery.Size = new Size(76, 21);
+            rdoDelivery.Size = new Size(78, 21);
             rdoDelivery.TabIndex = 10;
             rdoDelivery.TabStop = true;
-            rdoDelivery.Text = "delivery";
+            rdoDelivery.Text = "Delivery";
             rdoDelivery.UseVisualStyleBackColor = true;
             rdoDelivery.UseWaitCursor = true;
             // 
@@ -196,6 +198,10 @@
             rdoTakeOut.UseVisualStyleBackColor = true;
             rdoTakeOut.UseWaitCursor = true;
             rdoTakeOut.CheckedChanged += rdoTakeOut_CheckedChanged;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -238,5 +244,6 @@
         private RadioButton rdoEatIn;
         private RadioButton rdoDelivery;
         private RadioButton rdoTakeOut;
+        private OpenFileDialog openFileDialog1;
     }
 }
