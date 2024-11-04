@@ -4,18 +4,18 @@ namespace ruhshonaP9
 {
     public partial class Form1 : Form
     {
-        const string TAKE_OUT = "Take Out";
-        private string DiningOption = TAKE_OUT;
+        private string DiningOption;
+        const string TAKE_OUT = "Take Out"; 
         const string EAT_IN = "Eat In";
         const string DELIVERY = "Delivery";
-         
+
         private double RestaurantTaxRate = .08875;
         private double TakeOutFee = 5;
         private double EatInFee = 10;
         private double DeliveryFee = 15;
-        private double DiningInFee = 0;
+        
 
-        private string ResturantTrasactionLog = "ResturantTransLog.txt";
+        private string RestaurantTrasactionLog = "ResturantTransLog.txt";
         private string RestaurantConfig = "ResturantConfig.txt";
 
         public Form1()
@@ -91,17 +91,19 @@ namespace ruhshonaP9
         private void btnCalculateTotal_Click(object sender, EventArgs e)
         {
 
-            double Foodprice, totalFoodlPrice, RestaurantTaxAmount;
+            double Foodprice, totalFoodlPrice, RestaurantTaxAmount, DiningOptionFee;
             string RestaurantMenuItem;
             bool PriceValid;
-           
+            
+            StreamWriter sw;
 
+            double DiningOption = 0;
 
             // input
             // Parse converts string to double
             // 
             PriceValid = double.TryParse(txtFoodPrice.Text, out Foodprice);
-
+            
 
             if (PriceValid)
             {
@@ -116,6 +118,9 @@ namespace ruhshonaP9
                     case DELIVERY:
                         DiningOptionFee = DeliveryFee;
                         break;
+                    default:
+                        lstOut.Items.Add("This should never happen");
+                        break;
                 }
 
                 RestaurantMenuItem = txtMenuItem.Text;
@@ -128,15 +133,25 @@ namespace ruhshonaP9
 
                 lstOut.Items.Add("Menu Item is " + RestaurantMenuItem);
                 lstOut.Items.Add("Price is " + Foodprice.ToString("C2"));
-                lstOut.Items.Add("Dining Option = " + DiningOption);
-                lstOut.Items.Add("Dining Fee = " + DiningInFee);
+                lstOut.Items.Add("Dining Option is " + DiningOption);
                 lstOut.Items.Add("Tax Rate is " + RestaurantTaxRate.ToString("P2"));
                 lstOut.Items.Add("Tax amount is " + RestaurantTaxAmount.ToString("C2"));
                 lstOut.Items.Add("Total Food Price is " + totalFoodlPrice.ToString("C2"));
+                sw = File.AppendText(RestaurantTrasactionLog);
+                sw.WriteLine("*********** Beginning of Transaction at " +
+                            DateTime.Now.ToString("G") + "**********");
+                sw.WriteLine("Menu Item is " + RestaurantMenuItem);
+                sw.WriteLine("Price is " + Foodprice.ToString("C2"));
+                sw.WriteLine("Dining Option is " + DiningOption);
+                sw.WriteLine("Tax Rate is " + RestaurantTaxRate.ToString("P2"));
+                sw.WriteLine("Tax amount is " + RestaurantTaxAmount.ToString("C2"));
+                sw.WriteLine("Total Food Price is " + totalFoodlPrice.ToString("C2"));
+                
+                sw.Close();
 
                 btnClear.Focus();
 
-
+              
                 // This chnages the focus to the clear button
 
             }
@@ -160,12 +175,31 @@ namespace ruhshonaP9
 
         private void rdoTakeOut_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (rdoTakeOut.Checked)
+            {
+                DiningOption = TAKE_OUT;
+            }
         }
 
         private void grpEatingIn_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void rdoEatIn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoEatIn.Checked)
+            {
+                DiningOption = EAT_IN;
+            }
+        }
+
+        private void rdoDelivery_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoDelivery.Checked)
+            {
+                DiningOption = DELIVERY;
+            }
         }
     }
 }
