@@ -4,20 +4,41 @@ namespace ruhshonaP9
 {
     public partial class Form1 : Form
     {
-        private string DiningOption;
-        const string TAKE_OUT = "Take Out"; 
+
+        const string TAKE_OUT = "Take Out";
+        private string DiningOption = TAKE_OUT;
         const string EAT_IN = "Eat In";
         const string DELIVERY = "Delivery";
 
-        private double RestaurantTaxRate = .08875;
-        private double TakeOutFee = 5;
-        private double EatInFee = 10;
-        private double DeliveryFee = 15;
-        
+        private double restaurantTaxRate = .08875;
+        private double takeOutFee = 5;
+        private double eatInFee = 10;
+        private double deliveryFee = 15;
+
+
+
 
         private string RestaurantTrasactionLog = "ResturantTransLog.txt";
         private string RestaurantConfig = "ResturantConfig.txt";
-
+        public double RestaurantTaxRate {
+            get { return restaurantTaxRate; }
+            set { restaurantTaxRate = value; }
+        }
+        public double TakeOutFee
+        {
+            get { return takeOutFee; }
+            set { takeOutFee = value; }
+        }
+        public double EatInFee
+        {
+            get { return eatInFee; }
+            set { eatInFee = value; }
+        }
+        public double DeliveryFee
+        {
+            get { return deliveryFee; }
+            set { deliveryFee = value; }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -38,12 +59,19 @@ namespace ruhshonaP9
                 {
                     reader = File.OpenText(RestaurantConfig);
                     fileBad = false;
-                    valValid = double.TryParse(reader.ReadLine(), out RestaurantTaxRate);
+                    double tempValue;
+                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
+                    RestaurantTaxRate = tempValue;
 
-                    valValid = double.TryParse(reader.ReadLine(), out TakeOutFee);
+                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
+                    TakeOutFee = tempValue;
+                   
+                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
+                    EatInFee = tempValue;
 
-                    valValid = double.TryParse(reader.ReadLine(), out EatInFee);
-                    valValid = double.TryParse(reader.ReadLine(), out DeliveryFee);
+                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
+                    DeliveryFee = tempValue;
+                        
                     reader.Close();
                 }
                 catch (FileNotFoundException ex)
@@ -94,16 +122,16 @@ namespace ruhshonaP9
             double Foodprice, totalFoodlPrice, RestaurantTaxAmount, DiningOptionFee;
             string RestaurantMenuItem;
             bool PriceValid;
-            
+
             StreamWriter sw;
 
-            double DiningOption = 0;
+        //    double DiningOption = 0;
 
             // input
             // Parse converts string to double
             // 
             PriceValid = double.TryParse(txtFoodPrice.Text, out Foodprice);
-            
+
 
             if (PriceValid)
             {
@@ -146,12 +174,12 @@ namespace ruhshonaP9
                 sw.WriteLine("Tax Rate is " + RestaurantTaxRate.ToString("P2"));
                 sw.WriteLine("Tax amount is " + RestaurantTaxAmount.ToString("C2"));
                 sw.WriteLine("Total Food Price is " + totalFoodlPrice.ToString("C2"));
-                
+
                 sw.Close();
 
                 btnClear.Focus();
 
-              
+
                 // This chnages the focus to the clear button
 
             }
