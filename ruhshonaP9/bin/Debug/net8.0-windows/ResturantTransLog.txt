@@ -1,0 +1,28 @@
+*********** Beginning of Transaction at 11/6/2024 11:03:06 AM**********
+Menu Item is hn 
+Price is $10.00
+Dining Option is Take Out
+Tax Rate is 0.00%
+Tax amount is $0.00
+Total Food Price is $10.00
+*********** Beginning of Transaction at 11/6/2024 11:10:34 AM**********
+Menu Item is eg
+Price is $10.00
+Dining Option is Take Out
+Tax Rate is 8.87%
+Tax amount is $0.89
+Total Food Price is $10.89
+*********** Beginning of Transaction at 11/6/2024 11:46:18 AM**********
+Menu Item is dgff
+Price is $22.00
+Dining Option is Take Out
+Tax Rate is 8.87%
+Tax amount is $1.95
+Total Food Price is $23.95
+*********** Beginning of Transaction at 11/6/2024 11:53:06 AM**********
+Menu Item is dvdf
+Price is $10.00
+Dining Option is Take Out
+Tax Rate is 8.87%
+Tax amount is $0.89
+Total Food Price is $10.89
