@@ -26,3 +26,24 @@ Dining Option is Take Out
 Tax Rate is 8.87%
 Tax amount is $0.89
 Total Food Price is $10.89
+*********** Beginning of Transaction at 11/11/2024 12:00:58 PM**********
+Menu Item is dgfd
+Price is $10.00
+Dining Option is Take Out
+Tax Rate is 8.87%
+Tax amount is $0.89
+Total Food Price is $10.89
+*********** Beginning of Transaction at 11/11/2024 12:01:16 PM**********
+Menu Item is dgfd
+Price is $10.00
+Dining Option is Eat In
+Tax Rate is 8.87%
+Tax amount is $0.89
+Total Food Price is $10.89
+*********** Beginning of Transaction at 11/11/2024 12:02:43 PM**********
+Menu Item is dgfd
+Price is $10.00
+Dining Option is Delivery
+Tax Rate is 8.87%
+Tax amount is $0.89
+Total Food Price is $10.89

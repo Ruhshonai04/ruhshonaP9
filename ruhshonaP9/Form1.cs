@@ -5,9 +5,6 @@ namespace ruhshonaP9
     public partial class Form1 : Form
     {
 
-
-
-
         const string TAKE_OUT = "Take Out";
         private string DiningOption = TAKE_OUT;
         const string EAT_IN = "Eat In";
@@ -18,11 +15,8 @@ namespace ruhshonaP9
         private double eatInFee = 10;
         private double deliveryFee = 15;
 
-
-
-
-        private string RestaurantTrasactionLog = "ResturantTransLog.txt";
-        private string RestaurantConfig = "ResturantConfig.txt";
+        private string RestaurantTrasactionLog = "RestaurantTransLog.txt";
+        private string RestaurantConfig = "RestaurantConfig.txt";
         public double RestaurantTaxRate {
             get { return restaurantTaxRate; }
             set { restaurantTaxRate = value; }
@@ -46,7 +40,6 @@ namespace ruhshonaP9
         {
             InitializeComponent();
         }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
