@@ -12,7 +12,7 @@ namespace ruhshonaP9
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public Form2(Form1 form1)
         {
             InitializeComponent();
         }

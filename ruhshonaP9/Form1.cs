@@ -15,9 +15,13 @@ namespace ruhshonaP9
         private double eatInFee = 10;
         private double deliveryFee = 15;
 
+        private Form2 settingForm;
+
+
         private string RestaurantTrasactionLog = "RestaurantTransLog.txt";
         private string RestaurantConfig = "RestaurantConfig.txt";
-        public double RestaurantTaxRate {
+        public double RestaurantTaxRate
+        {
             get { return restaurantTaxRate; }
             set { restaurantTaxRate = value; }
         }
@@ -43,6 +47,7 @@ namespace ruhshonaP9
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            settingForm = new Form2(this);
             // this makes the checked changed procedure run ( it doesn't run if set in designer)
             // rdoEconomy.Checked = true;
             rdoTakeOut.Checked = true;
@@ -61,13 +66,13 @@ namespace ruhshonaP9
 
                     valValid = double.TryParse(reader.ReadLine(), out tempValue);
                     TakeOutFee = tempValue;
-                   
+
                     valValid = double.TryParse(reader.ReadLine(), out tempValue);
                     EatInFee = tempValue;
 
                     valValid = double.TryParse(reader.ReadLine(), out tempValue);
                     DeliveryFee = tempValue;
-                        
+
                     reader.Close();
                 }
                 catch (FileNotFoundException ex)
@@ -121,7 +126,7 @@ namespace ruhshonaP9
 
             StreamWriter sw;
 
-        //    double DiningOption = 0;
+            //    double DiningOption = 0;
 
             // input
             // Parse converts string to double
@@ -224,6 +229,16 @@ namespace ruhshonaP9
             {
                 DiningOption = DELIVERY;
             }
+        }
+
+        private void mnuSettings_Click(object sender, EventArgs e)
+        {
+            settingForm.txtTaxRate.Text = RestaurantTaxRate.ToString();
+            settingForm.txtTakeOutFee.Text = TakeOutFee.ToString();
+            settingForm.txtEatInFee.Text = EatInFee.ToString();
+            settingForm.txtDeliveryFee.Text = DeliveryFee.ToString();
+
+            settingForm.ShowDialog();
         }
     }
 }
