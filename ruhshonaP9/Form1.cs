@@ -14,12 +14,13 @@ namespace ruhshonaP9
         private double takeOutFee = 5;
         private double eatInFee = 10;
         private double deliveryFee = 15;
-
+        private double DiningInFee = 0;
         private Form2 settingForm;
 
 
         private string RestaurantTrasactionLog = "RestaurantTransLog.txt";
-        private string RestaurantConfig = "RestaurantConfig.txt";
+        public string RestaurantConfig = "RestaurantConfig.txt";
+
         public double RestaurantTaxRate
         {
             get { return restaurantTaxRate; }
@@ -163,6 +164,7 @@ namespace ruhshonaP9
                 lstOut.Items.Add("Menu Item is " + RestaurantMenuItem);
                 lstOut.Items.Add("Price is " + Foodprice.ToString("C2"));
                 lstOut.Items.Add("Dining Option is " + DiningOption);
+                lstOut.Items.Add("Dining in Fee = " + DiningInFee);
                 lstOut.Items.Add("Tax Rate is " + RestaurantTaxRate.ToString("P2"));
                 lstOut.Items.Add("Tax amount is " + RestaurantTaxAmount.ToString("C2"));
                 lstOut.Items.Add("Total Food Price is " + totalFoodlPrice.ToString("C2"));
@@ -172,6 +174,7 @@ namespace ruhshonaP9
                 sw.WriteLine("Menu Item is " + RestaurantMenuItem);
                 sw.WriteLine("Price is " + Foodprice.ToString("C2"));
                 sw.WriteLine("Dining Option is " + DiningOption);
+                sw.WriteLine("Dining in Fee = " + DiningInFee);
                 sw.WriteLine("Tax Rate is " + RestaurantTaxRate.ToString("P2"));
                 sw.WriteLine("Tax amount is " + RestaurantTaxAmount.ToString("C2"));
                 sw.WriteLine("Total Food Price is " + totalFoodlPrice.ToString("C2"));
@@ -238,7 +241,17 @@ namespace ruhshonaP9
             settingForm.txtEatInFee.Text = EatInFee.ToString();
             settingForm.txtDeliveryFee.Text = DeliveryFee.ToString();
 
+            setValueOnSecondForm();
             settingForm.ShowDialog();
         }
+
+        public void setValueOnSecondForm()
+        {
+            settingForm.txtTaxRate.Text = RestaurantTaxRate.ToString();
+            settingForm.txtTakeOutFee.Text = TakeOutFee.ToString();
+            settingForm.txtEatInFee.Text = EatInFee.ToString();
+            settingForm.txtDeliveryFee.Text = DeliveryFee.ToString();
+        }
+
     }
 }
