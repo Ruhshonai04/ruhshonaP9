@@ -8,13 +8,13 @@ namespace ruhshonaP9
         const string TAKE_OUT = "Take Out";
         private string DiningOption = TAKE_OUT;
         const string EAT_IN = "Eat In";
-        const string DELIVERY = "Delivery";
-
+        const string DELIVERY = "Delivery";   
         private double restaurantTaxRate = .08875;
         private double takeOutFee = 5;
         private double eatInFee = 10;
         private double deliveryFee = 15;
-        private double DiningInFee = 0;
+        private double DiningOptionFee = 10;
+        
         private Form2 settingForm;
 
 
@@ -127,7 +127,7 @@ namespace ruhshonaP9
 
             StreamWriter sw;
 
-            //    double DiningOption = 0;
+            // double DiningOptionFee = 0;
 
             // input
             // Parse converts string to double
@@ -157,6 +157,7 @@ namespace ruhshonaP9
 
 
                 //processing    
+                
                 RestaurantTaxAmount = Foodprice * RestaurantTaxRate;
                 totalFoodlPrice = Foodprice + RestaurantTaxAmount;
                 //output
@@ -164,7 +165,7 @@ namespace ruhshonaP9
                 lstOut.Items.Add("Menu Item is " + RestaurantMenuItem);
                 lstOut.Items.Add("Price is " + Foodprice.ToString("C2"));
                 lstOut.Items.Add("Dining Option is " + DiningOption);
-                lstOut.Items.Add("Dining in Fee = " + DiningInFee);
+                lstOut.Items.Add("Dining Option Fee is = " + DiningOptionFee.ToString("C"));
                 lstOut.Items.Add("Tax Rate is " + RestaurantTaxRate.ToString("P2"));
                 lstOut.Items.Add("Tax amount is " + RestaurantTaxAmount.ToString("C2"));
                 lstOut.Items.Add("Total Food Price is " + totalFoodlPrice.ToString("C2"));
@@ -174,7 +175,7 @@ namespace ruhshonaP9
                 sw.WriteLine("Menu Item is " + RestaurantMenuItem);
                 sw.WriteLine("Price is " + Foodprice.ToString("C2"));
                 sw.WriteLine("Dining Option is " + DiningOption);
-                sw.WriteLine("Dining in Fee = " + DiningInFee);
+                sw.WriteLine("Dining Option Fee is = " + DiningOptionFee.ToString("C"));
                 sw.WriteLine("Tax Rate is " + RestaurantTaxRate.ToString("P2"));
                 sw.WriteLine("Tax amount is " + RestaurantTaxAmount.ToString("C2"));
                 sw.WriteLine("Total Food Price is " + totalFoodlPrice.ToString("C2"));

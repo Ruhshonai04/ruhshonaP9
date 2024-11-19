@@ -48,30 +48,18 @@ namespace ruhshonaP9
                 sw.WriteLine(ff.EatInFee);
                 sw.WriteLine(ff.DeliveryFee);
 
+                sw.Close();
 
-
-
-
+                this.Hide();
+            }else
+            {
+                ff.setValueOnSecondForm();
             }
-
-
-
 
         }
 
         private void txtTaxRate_Leave(object sender, EventArgs e)
         {
-            bool taxValid = false;
-            double trTempValue;
-            taxValid = double.TryParse(txtTaxRate.Text, out trTempValue);
-            if (!taxValid) || trTempValue>=1 || trTempValue < 0)
-            {
-                txtTaxRate.Focus();
-                lblErrorMsg.Text = "Tax Rate is not valid";
-            }
-
-
-            }
         }
     }
 }
