@@ -37,7 +37,7 @@
             txtTakeOutFee = new TextBox();
             txtEatInFee = new TextBox();
             txtDeliveryFee = new TextBox();
-            label5 = new Label();
+            lblErrorMsg = new Label();
             SuspendLayout();
             // 
             // txtTaxRate
@@ -123,22 +123,22 @@
             txtDeliveryFee.Size = new Size(100, 29);
             txtDeliveryFee.TabIndex = 8;
             // 
-            // label5
+            // lblErrorMsg
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F);
-            label5.Location = new Point(31, 373);
-            label5.Name = "label5";
-            label5.Size = new Size(95, 21);
-            label5.TabIndex = 9;
-            label5.Text = "Delivery Fee";
+            lblErrorMsg.AutoSize = true;
+            lblErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblErrorMsg.ForeColor = Color.Red;
+            lblErrorMsg.Location = new Point(124, 383);
+            lblErrorMsg.Name = "lblErrorMsg";
+            lblErrorMsg.Size = new Size(0, 21);
+            lblErrorMsg.TabIndex = 9;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(374, 413);
-            Controls.Add(label5);
+            Controls.Add(lblErrorMsg);
             Controls.Add(txtDeliveryFee);
             Controls.Add(txtEatInFee);
             Controls.Add(txtTakeOutFee);
@@ -165,6 +165,6 @@
         public TextBox txtTakeOutFee;
         public TextBox txtEatInFee;
         public TextBox txtDeliveryFee;
-        private Label label5;
+        private Label lblErrorMsg;
     }
 }

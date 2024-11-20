@@ -1,0 +1,16 @@
+*********** Beginning of Transaction at 11/20/2024 12:03:33 PM**********
+Menu Item is fjgh
+Price is $12.00
+Dining Option is Take Out
+Dining Option Fee is = $5.00
+Tax Rate is 8.87%
+Tax amount is $1.06
+Total Food Price is $13.06
+*********** Beginning of Transaction at 11/20/2024 12:03:39 PM**********
+Menu Item is fjgh
+Price is $12.00
+Dining Option is Eat In
+Dining Option Fee is = $10.00
+Tax Rate is 8.87%
+Tax amount is $1.06
+Total Food Price is $13.06

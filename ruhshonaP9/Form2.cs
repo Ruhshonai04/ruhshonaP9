@@ -60,6 +60,19 @@ namespace ruhshonaP9
 
         private void txtTaxRate_Leave(object sender, EventArgs e)
         {
+            bool taxValid = false;
+            double trTempValue;
+            taxValid = double.TryParse(txtTaxRate.Text, out trTempValue);
+            if (!taxValid)
+            {
+                txtTaxRate.Focus();
+                lblErrorMsg.Text = "Tax Rate is not valid";
+            }
+            else
+            {
+                lblErrorMsg.Text = "";
+            }
+            
         }
     }
 }

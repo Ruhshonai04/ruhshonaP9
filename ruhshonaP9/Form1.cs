@@ -8,13 +8,13 @@ namespace ruhshonaP9
         const string TAKE_OUT = "Take Out";
         private string DiningOption = TAKE_OUT;
         const string EAT_IN = "Eat In";
-        const string DELIVERY = "Delivery";   
+        const string DELIVERY = "Delivery";
         private double restaurantTaxRate = .08875;
         private double takeOutFee = 5;
         private double eatInFee = 10;
         private double deliveryFee = 15;
-        private double DiningOptionFee = 10;
-        
+       
+
         private Form2 settingForm;
 
 
@@ -121,13 +121,13 @@ namespace ruhshonaP9
         private void btnCalculateTotal_Click(object sender, EventArgs e)
         {
 
-            double Foodprice, totalFoodlPrice, RestaurantTaxAmount, DiningOptionFee;
+            double Foodprice, totalFoodlPrice, RestaurantTaxAmount;
             string RestaurantMenuItem;
             bool PriceValid;
 
             StreamWriter sw;
 
-            // double DiningOptionFee = 0;
+            double DiningOptionFee = 0;
 
             // input
             // Parse converts string to double
@@ -157,9 +157,9 @@ namespace ruhshonaP9
 
 
                 //processing    
-                
+
                 RestaurantTaxAmount = Foodprice * RestaurantTaxRate;
-                totalFoodlPrice = Foodprice + RestaurantTaxAmount;
+                totalFoodlPrice = Foodprice + RestaurantTaxAmount + DiningOptionFee;
                 //output
 
                 lstOut.Items.Add("Menu Item is " + RestaurantMenuItem);
@@ -254,5 +254,25 @@ namespace ruhshonaP9
             settingForm.txtDeliveryFee.Text = DeliveryFee.ToString();
         }
 
+        private void btnDisplayLog_Click_Click(object sender, EventArgs e)
+        {
+            const int MAX_LOG_SIZE = 2000;
+            string[] RestaurantLogs = new string[MAX_LOG_SIZE];
+            StreamReader sr = File.OpenText(RestaurantTrasactionLog);
+            int numLines = 0;
+            while (!sr.EndOfStream)
+            {
+                RestaurantLogs[numLines] = sr.ReadLine();
+                numLines++;
+            }
+            /*
+            int i = 0, j = 0, k = 0;
+            j = i++ + 2;
+            i = 0;
+            k = ++i + 2;
+            lstOut.Items.Add("j = " + j + "k = " + k);
+            */
+            sr.Close(); 
+        }
     }
 }
