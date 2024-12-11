@@ -4,8 +4,8 @@ Price is $12.00
 Dining Option is Take Out
 Dining Option Fee is = $5.00
 Tax Rate is 8.87%
-Tax amount is $1.06
-Total Food Price is $13.06
+Tax amountd  is $1.06
+Total FooPrice is $13.06
 *********** Beginning of Transaction at 11/20/2024 12:03:39 PM**********
 Menu Item is fjgh
 Price is $12.00
@@ -14,3 +14,43 @@ Dining Option Fee is = $10.00
 Tax Rate is 8.87%
 Tax amount is $1.06
 Total Food Price is $13.06
+*********** Beginning of Transaction at 11/20/2024 12:52:12 PM**********
+Menu Item is hvhv
+Price is $10.00
+Dining Option is Take Out
+Dining Option Fee is = $5.00
+Tax Rate is 8.87%
+Tax amount is $0.89
+Total Food Price is $15.89
+*********** Beginning of Transaction at 11/20/2024 12:52:17 PM**********
+Menu Item is hvhv
+Price is $10.00
+Dining Option is Eat In
+Dining Option Fee is = $10.00
+Tax Rate is 8.87%
+Tax amount is $0.89
+Total Food Price is $20.89
+*********** Beginning of Transaction at 12/11/2024 11:38:19 AM**********
+Menu Item is khds
+Price is $3.00
+Dining Option is Delivery
+Dining Option Fee is = $15.00
+Tax Rate is 8.87%
+Tax amount is $0.27
+Total Food Price is $18.27
+*********** Beginning of Transaction at 12/11/2024 11:38:37 AM**********
+Menu Item is khds
+Price is $3.00
+Dining Option is Eat In
+Dining Option Fee is = $10.00
+Tax Rate is 8.87%
+Tax amount is $0.27
+Total Food Price is $13.27
+*********** Beginning of Transaction at 12/11/2024 11:38:50 AM**********
+Menu Item is khds
+Price is $3.00
+Dining Option is Take Out
+Dining Option Fee is = $5.00
+Tax Rate is 8.87%
+Tax amount is $0.27
+Total Food Price is $8.27

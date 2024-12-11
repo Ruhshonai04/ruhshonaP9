@@ -257,22 +257,44 @@ namespace ruhshonaP9
         private void btnDisplayLog_Click_Click(object sender, EventArgs e)
         {
             const int MAX_LOG_SIZE = 2000;
-            string[] RestaurantLogs = new string[MAX_LOG_SIZE];
-            StreamReader sr = File.OpenText(RestaurantTrasactionLog);
-            int numLines = 0;
+            string[] RestaurantLogLines = new string[MAX_LOG_SIZE];
+            StreamReader sr; 
+            sr = File.OpenText(RestaurantTrasactionLog);
+            int numLogLines = 0;
             while (!sr.EndOfStream)
             {
-                RestaurantLogs[numLines] = sr.ReadLine();
-                numLines++;
+                RestaurantLogLines[numLogLines] = sr.ReadLine();
+                numLogLines++;
             }
-            /*
-            int i = 0, j = 0, k = 0;
-            j = i++ + 2;
-            i = 0;
-            k = ++i + 2;
-            lstOut.Items.Add("j = " + j + "k = " + k);
-            */
-            sr.Close(); 
+            sr.Close();
+            int begTrans = -3 ;
+            int endTrans = 4;
+            for (int i = 0; i < numLogLines; i++)
+            {
+                if (RestaurantLogLines[i] == "Dining Option is" + DiningOption){
+
+
+                    for (int j = i + begTrans; j < i+endTrans; j++){
+                        lstOut.Items.Add(RestaurantLogLines[j]);
+
+
+
+
+
+
+
+                    }
+                }
+                
+                    
+                    
+
+
+                    
+                
+                
+                
+            }
         }
     }
 }
