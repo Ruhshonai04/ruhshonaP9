@@ -96,6 +96,7 @@ namespace ruhshonaP9
             txtFoodPrice.Clear();
             lstOut.Items.Clear();
             txtMenuItem.Focus();
+            rdoTakeOut.Checked = true;
         }
 
 
@@ -158,8 +159,8 @@ namespace ruhshonaP9
 
                 //processing    
 
-                RestaurantTaxAmount = Foodprice * RestaurantTaxRate;
-                totalFoodlPrice = Foodprice + RestaurantTaxAmount + DiningOptionFee;
+                RestaurantTaxAmount = (Foodprice + DiningOptionFee) * RestaurantTaxRate;
+                totalFoodlPrice = Foodprice + RestaurantTaxAmount;
                 //output
 
                 lstOut.Items.Add("Menu Item is " + RestaurantMenuItem);

@@ -56,7 +56,7 @@
             label1.ForeColor = Color.Crimson;
             label1.Location = new Point(327, 0);
             label1.Name = "label1";
-            label1.Size = new Size(443, 60);
+            label1.Size = new Size(226, 32);
             label1.TabIndex = 0;
             label1.Text = "Food Restaurant";
             // 
@@ -68,7 +68,7 @@
             lblMenuItem.ForeColor = SystemColors.ControlText;
             lblMenuItem.Location = new Point(57, 207);
             lblMenuItem.Name = "lblMenuItem";
-            lblMenuItem.Size = new Size(149, 36);
+            lblMenuItem.Size = new Size(75, 17);
             lblMenuItem.TabIndex = 1;
             lblMenuItem.Text = "Menu Item\r\n";
             // 
@@ -78,7 +78,7 @@
             txtMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtMenuItem.Location = new Point(216, 204);
             txtMenuItem.Name = "txtMenuItem";
-            txtMenuItem.Size = new Size(229, 39);
+            txtMenuItem.Size = new Size(229, 23);
             txtMenuItem.TabIndex = 2;
             txtMenuItem.Enter += txtMenuItem_Enter;
             txtMenuItem.Leave += txtMenuItem_Leave;
@@ -89,7 +89,7 @@
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(74, 267);
             label3.Name = "label3";
-            label3.Size = new Size(143, 36);
+            label3.Size = new Size(73, 17);
             label3.TabIndex = 3;
             label3.Text = "Food Price";
             // 
@@ -97,17 +97,17 @@
             // 
             txtFoodPrice.Location = new Point(229, 266);
             txtFoodPrice.Name = "txtFoodPrice";
-            txtFoodPrice.Size = new Size(181, 37);
+            txtFoodPrice.Size = new Size(181, 22);
             txtFoodPrice.TabIndex = 4;
             // 
             // lstOut
             // 
             lstOut.Font = new Font("Segoe UI Symbol", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lstOut.FormattingEnabled = true;
-            lstOut.ItemHeight = 36;
+            lstOut.ItemHeight = 17;
             lstOut.Location = new Point(57, 332);
             lstOut.Name = "lstOut";
-            lstOut.Size = new Size(854, 292);
+            lstOut.Size = new Size(854, 276);
             lstOut.TabIndex = 6;
             lstOut.TabStop = false;
             // 
@@ -170,7 +170,7 @@
             rdoEatIn.AutoSize = true;
             rdoEatIn.Location = new Point(309, 32);
             rdoEatIn.Name = "rdoEatIn";
-            rdoEatIn.Size = new Size(115, 40);
+            rdoEatIn.Size = new Size(61, 21);
             rdoEatIn.TabIndex = 9;
             rdoEatIn.TabStop = true;
             rdoEatIn.Text = "Eat In";
@@ -183,7 +183,7 @@
             rdoDelivery.AutoSize = true;
             rdoDelivery.Location = new Point(608, 32);
             rdoDelivery.Name = "rdoDelivery";
-            rdoDelivery.Size = new Size(146, 40);
+            rdoDelivery.Size = new Size(78, 21);
             rdoDelivery.TabIndex = 10;
             rdoDelivery.TabStop = true;
             rdoDelivery.Text = "Delivery";
@@ -197,7 +197,7 @@
             rdoTakeOut.AutoSize = true;
             rdoTakeOut.Location = new Point(7, 32);
             rdoTakeOut.Name = "rdoTakeOut";
-            rdoTakeOut.Size = new Size(155, 40);
+            rdoTakeOut.Size = new Size(81, 21);
             rdoTakeOut.TabIndex = 0;
             rdoTakeOut.TabStop = true;
             rdoTakeOut.Text = "Take Out";
@@ -215,14 +215,14 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { mnuSettings });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1294, 40);
+            menuStrip1.Size = new Size(1294, 24);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             // 
             // mnuSettings
             // 
             mnuSettings.Name = "mnuSettings";
-            mnuSettings.Size = new Size(120, 36);
+            mnuSettings.Size = new Size(61, 20);
             mnuSettings.Text = "Settings";
             mnuSettings.Click += mnuSettings_Click;
             // 
@@ -233,14 +233,14 @@
             btnDisplayLog_Click.Location = new Point(878, 641);
             btnDisplayLog_Click.Name = "btnDisplayLog_Click";
             btnDisplayLog_Click.Size = new Size(131, 136);
-            btnDisplayLog_Click.TabIndex = 10;
+            btnDisplayLog_Click.TabIndex = 8;
             btnDisplayLog_Click.Text = "&Display Logs for Selected Type ";
             btnDisplayLog_Click.UseVisualStyleBackColor = true;
             btnDisplayLog_Click.Click += btnDisplayLog_Click_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(16F, 30F);
+            AutoScaleDimensions = new SizeF(9F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1294, 824);
             Controls.Add(btnDisplayLog_Click);

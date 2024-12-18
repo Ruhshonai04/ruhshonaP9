@@ -54,3 +54,19 @@ Dining Option Fee is = $5.00
 Tax Rate is 8.87%
 Tax amount is $0.27
 Total Food Price is $8.27
+*********** Beginning of Transaction at 12/18/2024 11:13:43 AM**********
+Menu Item is gdegv
+Price is $20.00
+Dining Option is Eat In
+Dining Option Fee is = $10.00
+Tax Rate is 8.87%
+Tax amount is $1.77
+Total Food Price is $31.77
+*********** Beginning of Transaction at 12/18/2024 11:22:40 AM**********
+Menu Item is eed
+Price is $34.00
+Dining Option is Eat In
+Dining Option Fee is = $10.00
+Tax Rate is 8.87%
+Tax amount is $3.02
+Total Food Price is $47.02
